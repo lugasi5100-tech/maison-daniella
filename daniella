@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DANIELLA HAJAJ BRIDAL | שמלות כלה וערב</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory: #F9F5EF;
+    --cream: #F0E8DA;
+    --gold: #B8955A;
+    --gold-light: #D4AF7A;
+    --charcoal: #1A1714;
+    --warm-gray: #6B6056;
+    --blush: #E8D5C4;
+    --white: #FEFEFE;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--ivory);
+    color: var(--charcoal);
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* CUSTOM CURSOR */
+  .cursor {
+    position: fixed;
+    width: 8px; height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+    mix-blend-mode: multiply;
+  }
+  .cursor-ring {
+    position: fixed;
+    width: 36px; height: 36px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transition: all 0.15s ease;
+    opacity: 0.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 0 48px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.4s ease;
+  }
+  nav.scrolled {
+    background: rgba(249,245,239,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(184,149,90,0.15);
+    height: 64px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    text-decoration: none;
+    transition: color 0.3s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left: 0; right: 0;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 300;
+    letter-spacing: 8px;
+    color: var(--charcoal);
+    text-decoration: none;
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .nav-logo span { color: var(--gold); }
+
+  .nav-cta {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--gold);
+    border: none;
+    padding: 10px 22px;
+    cursor: none;
+    transition: background 0.3s, transform 0.2s;
+    text-decoration: none;
+  }
+  .nav-cta:hover { background: var(--charcoal); transform: translateY(-1px); }
+
+  /* HERO */
+  .hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('img13.jpg') center/cover no-repeat;
+    transform: scale(1.05);
+    animation: heroZoom 12s ease-out forwards;
+  }
+  @keyframes heroZoom {
+    from { transform: scale(1.1); }
+    to { transform: scale(1.0); }
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(26,23,20,0.7) 0%,
+      rgba(26,23,20,0.2) 50%,
+      transparent 100%
+    );
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 80px 80px;
+    animation: fadeUp 1.4s ease 0.3s both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-label {
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 20px;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 7vw, 96px);
+    font-weight: 300;
+    line-height: 1.0;
+    color: var(--white);
+    margin-bottom: 28px;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+  .hero-subtitle {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 44px;
+  }
+  .hero-btns { display: flex; gap: 16px; flex-direction: row-reverse; justify-content: flex-end; }
+  .btn-primary {
+    display: inline-block;
+    padding: 16px 40px;
+    background: var(--gold);
+    color: var(--white);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: none;
+  }
+  .btn-primary:hover { background: var(--white); color: var(--charcoal); }
+  .btn-outline {
+    display: inline-block;
+    padding: 16px 40px;
+    border: 1px solid rgba(255,255,255,0.5);
+    color: var(--white);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: none;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold-light); }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    right: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255,255,255,0.5);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: fadeIn 2s ease 1.5s both;
+  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .scroll-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent, var(--gold));
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+  @keyframes scrollLine {
+    0%, 100% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+  }
+
+  /* MARQUEE */
+  .marquee-wrap {
+    background: var(--charcoal);
+    padding: 18px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-track {
+    display: inline-flex;
+    gap: 0;
+    animation: marquee 25s linear infinite;
+  }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .marquee-item {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 0 40px;
+  }
+  .marquee-dot { color: rgba(184,149,90,0.3); }
+
+  /* SECTION HEADER */
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--charcoal);
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .section-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 24px auto 0;
+  }
+
+  /* COLLECTIONS */
+  #collections { padding: 120px 60px; }
+  .collections-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 16px;
+  }
+  .collection-card {
+    position: relative;
+    overflow: hidden;
+    cursor: none;
+  }
+  .collection-card:first-child {
+    grid-row: 1 / 3;
+  }
+  .collection-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    min-height: 320px;
+  }
+  .collection-card:first-child img { min-height: 640px; }
+  .collection-card:hover img { transform: scale(1.06); }
+  .collection-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26,23,20,0.75) 0%, transparent 60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 32px;
+    transition: opacity 0.4s;
+  }
+  .collection-year {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  .collection-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--white);
+    letter-spacing: 1px;
+  }
+  .collection-link {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 2px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.3s;
+    cursor: none;
+  }
+  .collection-card:hover .collection-link { opacity: 1; transform: translateY(0); }
+
+  /* ABOUT */
+  #about {
+    padding: 120px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: var(--cream);
+  }
+  .about-image {
+    position: relative;
+    overflow: hidden;
+    min-height: 640px;
+  }
+  .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .about-image-accent {
+    position: absolute;
+    bottom: 40px;
+    right: -20px;
+    width: 160px;
+    height: 200px;
+    border: 2px solid var(--gold);
+    pointer-events: none;
+  }
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+  }
+  .about-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.2;
+    color: var(--charcoal);
+    margin-bottom: 40px;
+    position: relative;
+  }
+  .about-quote::before {
+    content: '"';
+    font-size: 140px;
+    color: var(--gold);
+    opacity: 0.15;
+    position: absolute;
+    top: -40px;
+    right: -20px;
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1;
+  }
+  .about-text {
+    font-size: 14px;
+    line-height: 2;
+    color: var(--warm-gray);
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+  .about-stats {
+    display: flex;
+    gap: 48px;
+    margin-bottom: 44px;
+  }
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-top: 6px;
+  }
+
+  /* BRIDES */
+  #brides { padding: 120px 60px; }
+  .brides-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .bride-card {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    cursor: none;
+  }
+  .bride-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+  }
+  .bride-card:hover img { transform: scale(1.08); }
+  .bride-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(26,23,20,0.0);
+    transition: background 0.4s;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+  }
+  .bride-card:hover .bride-overlay { background: rgba(26,23,20,0.45); }
+  .bride-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--white);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.35s;
+  }
+  .bride-card:hover .bride-name { opacity: 1; transform: translateY(0); }
+
+  /* PROCESS */
+  #process {
+    padding: 120px 80px;
+    background: var(--charcoal);
+    text-align: center;
+  }
+  #process .section-label { color: var(--gold); }
+  #process .section-title { color: var(--white); }
+  #process .section-divider { background: var(--gold); }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-top: 72px;
+    text-align: center;
+  }
+  .process-step { position: relative; }
+  .process-step::after {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: -20px;
+    width: 40px;
+    height: 1px;
+    background: rgba(184,149,90,0.3);
+  }
+  .process-step:first-child::after { display: none; }
+  .step-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    font-weight: 300;
+    color: rgba(184,149,90,0.2);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 12px;
+    font-weight: 400;
+  }
+  .step-desc {
+    font-size: 12px;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.45);
+    font-weight: 300;
+  }
+
+  /* APPOINTMENT */
+  #appointment {
+    padding: 120px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+  }
+  .appointment-intro .section-header { text-align: right; }
+  .appointment-intro .section-divider { margin-right: 0; }
+  .appointment-info {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .info-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .info-icon {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 14px;
+  }
+  .info-text { font-size: 13px; line-height: 1.7; color: var(--warm-gray); }
+  .info-text strong { color: var(--charcoal); font-weight: 500; display: block; margin-bottom: 2px; font-size: 12px; letter-spacing: 1px; }
+
+  .appointment-form {
+    background: var(--cream);
+    padding: 48px;
+    position: relative;
+  }
+  .appointment-form::before {
+    content: '';
+    position: absolute;
+    top: -8px; right: -8px;
+    width: 100%; height: 100%;
+    border: 1px solid var(--gold);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .form-group {
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .form-group label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 8px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--white);
+    border: 1px solid rgba(184,149,90,0.25);
+    border-radius: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: var(--charcoal);
+    outline: none;
+    transition: border-color 0.3s;
+    direction: rtl;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+  }
+  .form-group textarea { min-height: 100px; resize: vertical; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-submit {
+    width: 100%;
+    padding: 16px;
+    background: var(--charcoal);
+    color: var(--white);
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    cursor: none;
+    transition: background 0.3s;
+    position: relative;
+    z-index: 1;
+  }
+  .form-submit:hover { background: var(--gold); }
+
+  /* INSTAGRAM / GALLERY */
+  #gallery {
+    padding: 80px 0 0;
+    text-align: center;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4px;
+    margin-top: 48px;
+  }
+  .gallery-item {
+    aspect-ratio: 1;
+    overflow: hidden;
+    position: relative;
+    cursor: none;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .gallery-item:hover img { transform: scale(1.1); }
+  .gallery-item-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(26,23,20,0.0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+  }
+  .gallery-item:hover .gallery-item-overlay {
+    background: rgba(184,149,90,0.35);
+  }
+  .ig-icon { opacity: 0; transition: opacity 0.3s; font-size: 22px; color: white; }
+  .gallery-item:hover .ig-icon { opacity: 1; }
+
+  /* BOUTIQUES */
+  #boutiques {
+    padding: 120px 80px;
+    background: var(--cream);
+  }
+  .boutiques-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+  }
+  .boutique-card {
+    background: var(--ivory);
+    padding: 48px 36px;
+    transition: background 0.3s;
+    text-align: center;
+  }
+  .boutique-card:hover { background: var(--white); }
+  .boutique-city {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin-bottom: 8px;
+  }
+  .boutique-country {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .boutique-divider {
+    width: 30px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 20px;
+  }
+  .boutique-address {
+    font-size: 12px;
+    line-height: 1.8;
+    color: var(--warm-gray);
+    font-weight: 300;
+  }
+  .boutique-phone {
+    display: block;
+    margin-top: 16px;
+    font-size: 11px;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 1px;
+    cursor: none;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--charcoal);
+    padding: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    color: var(--white);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .footer-logo span { color: var(--gold); }
+  .footer-tagline {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    font-weight: 300;
+    line-height: 1.8;
+  }
+  .footer-col-title {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .footer-links a {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 300;
+    cursor: none;
+  }
+  .footer-links a:hover { color: var(--gold-light); }
+  .footer-social { display: flex; gap: 16px; margin-top: 24px; }
+  .social-btn {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(184,149,90,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s;
+    cursor: none;
+  }
+  .social-btn:hover { border-color: var(--gold); color: var(--gold); }
+  .footer-bottom {
+    background: var(--charcoal);
+    border-top: 1px solid rgba(184,149,90,0.1);
+    padding: 24px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 1px;
+  }
+
+  /* NOTIFICATION */
+  .toast {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: var(--charcoal);
+    color: var(--white);
+    padding: 16px 32px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 999;
+    border-bottom: 2px solid var(--gold);
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* REVEAL ANIMATIONS */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* MOBILE */
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hero-content { padding: 0 32px 60px; }
+    .hero-scroll { display: none; }
+    #collections { padding: 80px 24px; }
+    .collections-grid { grid-template-columns: 1fr; }
+    .collection-card:first-child { grid-row: auto; }
+    #about { grid-template-columns: 1fr; }
+    .about-content { padding: 48px 32px; }
+    .brides-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-steps { grid-template-columns: 1fr 1fr; }
+    #appointment { grid-template-columns: 1fr; padding: 80px 32px; }
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+    .boutiques-grid { grid-template-columns: 1fr; }
+    footer { grid-template-columns: 1fr; padding: 60px 32px; }
+    .footer-bottom { padding: 20px 32px; flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <ul class="nav-links">
+    <li><a href="#collections">קולקציות</a></li>
+    <li><a href="#about">על המעצבת</a></li>
+    <li><a href="#brides">כלות</a></li>
+    <li><a href="#boutiques">בוטיקים</a></li>
+  </ul>
+  <a href="#" class="nav-logo">DANIELLA <span>HAJAJ</span></a>
+  <a href="#appointment" class="nav-cta">קבעי תור</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-label">קולקציית 2025 · שמלות כלה וערב</p>
+    <h1 class="hero-title">
+      לכל כלה<br>
+      <em>את הרגע</em><br>
+      שהיא חלמה
+    </h1>
+    <p class="hero-subtitle">Daniella Hajaj Bridal · Rishon Le Zion · Since 2008</p>
+    <div class="hero-btns">
+      <a href="#collections" class="btn-primary">גלי את הקולקציה</a>
+      <a href="#appointment" class="btn-outline">קבעי פגישת ייעוץ</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>גלול</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">Daniella Hajaj Bridal</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">שמלות כלה וערב</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">ראשון לציון · ישראל</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">עיצוב בלעדי</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Bridal & Evening Gowns</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">כל שמלה — יצירה</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Daniella Hajaj Bridal</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">שמלות כלה וערב</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">ראשון לציון · ישראל</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">עיצוב בלעדי</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">Bridal & Evening Gowns</span><span class="marquee-dot">◆</span>
+    <span class="marquee-item">כל שמלה — יצירה</span><span class="marquee-dot">◆</span>
+  </div>
+</div>
+
+<!-- COLLECTIONS -->
+<section id="collections">
+  <div class="section-header reveal">
+    <p class="section-label">הקולקציות שלנו</p>
+    <h2 class="section-title">יצירות <em>נצח</em></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="collections-grid">
+    <div class="collection-card reveal">
+      <img src="img1.jpg" alt="שמלת כלה" loading="lazy">
+      <div class="collection-overlay">
+        <span class="collection-year">2025</span>
+        <h3 class="collection-name">בלאנש</h3>
+        <a href="#" class="collection-link">לצפייה בקולקציה ←</a>
+      </div>
+    </div>
+    <div class="collection-card reveal reveal-delay-1">
+      <img src="img9.jpg" alt="שמלת כלה" loading="lazy">
+      <div class="collection-overlay">
+        <span class="collection-year">2025</span>
+        <h3 class="collection-name">סאטן</h3>
+        <a href="#" class="collection-link">לצפייה ←</a>
+      </div>
+    </div>
+    <div class="collection-card reveal reveal-delay-2">
+      <img src="img11.jpg" alt="שמלת כלה" loading="lazy">
+      <div class="collection-overlay">
+        <span class="collection-year">2024</span>
+        <h3 class="collection-name">לייסי</h3>
+        <a href="#" class="collection-link">לצפייה ←</a>
+      </div>
+    </div>
+    <div class="collection-card reveal reveal-delay-1">
+      <img src="img10.jpg" alt="שמלת כלה" loading="lazy">
+      <div class="collection-overlay">
+        <span class="collection-year">2024</span>
+        <h3 class="collection-name">רויאל</h3>
+        <a href="#" class="collection-link">לצפייה ←</a>
+      </div>
+    </div>
+    <div class="collection-card reveal reveal-delay-2">
+      <img src="img12.jpg" alt="שמלת ערב" loading="lazy">
+      <div class="collection-overlay">
+        <span class="collection-year">2024</span>
+        <h3 class="collection-name">גלם</h3>
+        <a href="#" class="collection-link">לצפייה ←</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-image">
+    <img src="img2.jpg" alt="Daniella Hajaj Bridal" loading="lazy">
+    <div class="about-image-accent"></div>
+  </div>
+  <div class="about-content reveal">
+    <div class="section-header" style="text-align:right; margin-bottom:40px;">
+      <p class="section-label">על המעצבת</p>
+      <h2 class="section-title">דניאלה<br><em>חג'אג'</em></h2>
+      <div class="section-divider" style="margin-right:0;"></div>
+    </div>
+    <p class="about-quote">כל שמלה היא סיפור אהבה — תפקידי הוא לתת לו את הצורה המושלמת.</p>
+    <p class="about-text">
+      דניאלה חג'אג' היא מעצבת שמלות כלה וערב בלעדיות, ממוקמת בראשון לציון.
+      עם עין אמנותית חדה ותשוקה בלתי מתפשרת לפרטים, כל שמלה נוצרת ממש עבור האישה שתלבש אותה.
+      הסטודיו שלה מציע חווית עיצוב אישית ואינטימית — משמלות כלה קלאסיות ועד שמלות ערב מרהיבות.
+    </p>
+    <div class="about-stats">
+      <div>
+        <div class="stat-number">15+</div>
+        <div class="stat-label">שנות ניסיון</div>
+      </div>
+      <div>
+        <div class="stat-number">800+</div>
+        <div class="stat-label">כלות מאושרות</div>
+      </div>
+      <div>
+        <div class="stat-number">12</div>
+        <div class="stat-label">קולקציות</div>
+      </div>
+    </div>
+    <a href="#appointment" class="btn-primary">קבעי פגישת ייעוץ</a>
+  </div>
+</section>
+
+<!-- BRIDES -->
+<section id="brides" style="background: var(--ivory);">
+  <div class="section-header reveal">
+    <p class="section-label">הכלות שלנו</p>
+    <h2 class="section-title">הרגעים <em>המושלמים</em></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="brides-grid" style="margin-top:48px;">
+    <div class="bride-card reveal">
+      <img src="img13.jpg" alt="Bride" loading="lazy">
+      <div class="bride-overlay"><span class="bride-name">כלה דניאלה חג'אג'</span></div>
+    </div>
+    <div class="bride-card reveal reveal-delay-1">
+      <img src="img1.jpg" alt="Bride" loading="lazy">
+      <div class="bride-overlay"><span class="bride-name">כלה דניאלה חג'אג'</span></div>
+    </div>
+    <div class="bride-card reveal reveal-delay-2">
+      <img src="img3.jpg" alt="Bride" loading="lazy">
+      <div class="bride-overlay"><span class="bride-name">שמלת ערב</span></div>
+    </div>
+    <div class="bride-card reveal reveal-delay-3">
+      <img src="img10.jpg" alt="Bride" loading="lazy">
+      <div class="bride-overlay"><span class="bride-name">כלה דניאלה חג'אג'</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-header reveal">
+    <p class="section-label">התהליך</p>
+    <h2 class="section-title" style="color:var(--white);">מהחלום <em>למציאות</em></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="step-number">01</div>
+      <h3 class="step-title">פגישת ייעוץ</h3>
+      <p class="step-desc">פגישה אישית של שעה בסטודיו שלנו, בה נלמד להכיר אותך ואת החזון שלך</p>
+    </div>
+    <div class="process-step reveal reveal-delay-1">
+      <div class="step-number">02</div>
+      <h3 class="step-title">עיצוב ובחירת בד</h3>
+      <p class="step-desc">בוחרים יחד את הסגנון, הצבע והחומרים מתוך ספריית הבדים הבלעדית שלנו</p>
+    </div>
+    <div class="process-step reveal reveal-delay-2">
+      <div class="step-number">03</div>
+      <h3 class="step-title">מדידות ותפירה</h3>
+      <p class="step-desc">שלוש עד ארבע מדידות מותאמות אישית, כדי שהשמלה תשבה עליך בדיוק</p>
+    </div>
+    <div class="process-step reveal reveal-delay-3">
+      <div class="step-number">04</div>
+      <h3 class="step-title">מסירה ושמחה</h3>
+      <p class="step-desc">מסירה רגשית של השמלה הגמורה, מוכנה ליום המושלם שלך</p>
+    </div>
+  </div>
+</section>
+
+<!-- APPOINTMENT -->
+<section id="appointment">
+  <div class="appointment-intro reveal">
+    <div class="section-header" style="text-align:right;">
+      <p class="section-label">קביעת תור</p>
+      <h2 class="section-title">התחילי את<br>המסע <em>שלך</em></h2>
+      <div class="section-divider" style="margin-right:0;"></div>
+    </div>
+    <div class="appointment-info">
+      <div class="info-item">
+        <div class="info-icon">📍</div>
+        <div class="info-text">
+          <strong>הסטודיו שלנו</strong>
+          ראשון לציון, ישראל 7570705
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">🕐</div>
+        <div class="info-text">
+          <strong>שעות פעילות</strong>
+          ראשון–חמישי: 09:00–20:00<br>שישי–שבת: סגור
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">📞</div>
+        <div class="info-text">
+          <strong>יצירת קשר</strong>
+          077-335-4950<br><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="32565a50405b56535e0372555f535b5e1c515d5f">[email&#160;protected]</a>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">💎</div>
+        <div class="info-text">
+          <strong>שמלות כלה וערב</strong>
+          פגישת ייעוץ אישית ואינטימית — נמצא יחד את השמלה שחלמת עליה
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="appointment-form reveal reveal-delay-2">
+    <div style="text-align:center; margin-bottom:32px;">
+      <p class="section-label">קבעי פגישה</p>
+    </div>
+    <div class="form-group">
+      <label>שם מלא</label>
+      <input type="text" placeholder="השם שלך">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>טלפון</label>
+        <input type="tel" placeholder="050-000-0000">
+      </div>
+      <div class="form-group">
+        <label>אימייל</label>
+        <input type="email" placeholder="your@email.com">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>תאריך החתונה</label>
+        <input type="date">
+      </div>
+      <div class="form-group">
+        <label>מועד מועדף לפגישה</label>
+        <input type="date">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>סגנון שמלה מועדף</label>
+      <select>
+        <option value="">בחרי סגנון...</option>
+        <option>מחשוף עמוק — דרמטי</option>
+        <option>מינימליסטי — נקי</option>
+        <option>פרינסס — קלאסי</option>
+        <option>בוהו — רומנטי</option>
+        <option>עוד לא יודעת 😊</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>ספרי לנו על עצמך</label>
+      <textarea placeholder="על החתונה, ההרגשה שאת מחפשת, כל מה שעל הלב..."></textarea>
+    </div>
+    <button class="form-submit" onclick="submitForm()">שלחי בקשה לפגישה</button>
+  </div>
+</section>
+
+<!-- GALLERY / INSTAGRAM -->
+<section id="gallery">
+  <div class="section-header reveal" style="padding: 0 60px;">
+    <p class="section-label">@daniellahajaj</p>
+    <h2 class="section-title">עקבי אחרינו <em>באינסטגרם</em></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="img4.jpg" loading="lazy"><div class="gallery-item-overlay"><span class="ig-icon">♡</span></div></div>
+    <div class="gallery-item"><img src="img5.jpg" loading="lazy"><div class="gallery-item-overlay"><span class="ig-icon">♡</span></div></div>
+    <div class="gallery-item"><img src="img6.jpg" loading="lazy"><div class="gallery-item-overlay"><span class="ig-icon">♡</span></div></div>
+    <div class="gallery-item"><img src="img7.jpg" loading="lazy"><div class="gallery-item-overlay"><span class="ig-icon">♡</span></div></div>
+    <div class="gallery-item"><img src="img8.jpg" loading="lazy"><div class="gallery-item-overlay"><span class="ig-icon">♡</span></div></div>
+    <div class="gallery-item"><img src="img12.jpg" loading="lazy"><div class="gallery-item-overlay"><span class="ig-icon">♡</span></div></div>
+  </div>
+</section>
+
+<!-- BOUTIQUES -->
+<section id="boutiques">
+  <div class="section-header reveal">
+    <p class="section-label">הסטודיו</p>
+    <h2 class="section-title">בואי <em>להכיר</em> אותנו</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="boutiques-grid" style="grid-template-columns: repeat(3,1fr);">
+    <div class="boutique-card reveal">
+      <div class="boutique-city">ראשון לציון</div>
+      <div class="boutique-country">ישראל · הסטודיו הראשי</div>
+      <div class="boutique-divider"></div>
+      <div class="boutique-address">
+        דוד סחרוב 5<br>
+        ראשון לציון
+      </div>
+      <a href="tel:0773354950" class="boutique-phone">077-335-4950</a>
+    </div>
+    <div class="boutique-card reveal reveal-delay-1">
+      <div class="boutique-city">אינסטגרם</div>
+      <div class="boutique-country">עקבי אחרינו</div>
+      <div class="boutique-divider"></div>
+      <div class="boutique-address">
+        @daniellahajaj<br><br>
+        השראה, כלות, מאחורי הקלעים
+      </div>
+      <a href="https://www.instagram.com/daniellahajaj" target="_blank" class="boutique-phone">לפרופיל שלנו ↗</a>
+    </div>
+    <div class="boutique-card reveal reveal-delay-2">
+      <div class="boutique-city">אימייל</div>
+      <div class="boutique-country">כתבי לנו</div>
+      <div class="boutique-divider"></div>
+      <div class="boutique-address">
+        dhbridal1@gmail.com<br><br>
+        נחזור אליך תוך 24 שעות
+      </div>
+      <a href="mailto:dhbridal1@gmail.com" class="boutique-phone">שלחי מייל ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">DANIELLA <span>HAJAJ</span></div>
+    <p class="footer-tagline">
+      שמלות כלה וערב בעיצוב בלעדי<br>
+      ראשון לציון, ישראל<br><br>
+      © 2025 Daniella Hajaj Bridal<br>
+      כל הזכויות שמורות
+    </p>
+  </div>
+  <div>
+    <p class="footer-col-title">ניווט מהיר</p>
+    <ul class="footer-links">
+      <li><a href="#collections">הקולקציות</a></li>
+      <li><a href="#about">על המעצבת</a></li>
+      <li><a href="#brides">הכלות שלנו</a></li>
+      <li><a href="#process">התהליך</a></li>
+      <li><a href="#boutiques">בוטיקים</a></li>
+      <li><a href="#appointment">קבעי תור</a></li>
+    </ul>
+  </div>
+  <div>
+    <p class="footer-col-title">עקבי אחרינו</p>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/daniellahajaj" target="_blank" class="social-btn" title="Instagram">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=100063476831154" target="_blank" class="social-btn" title="Facebook">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://www.pinterest.com" target="_blank" class="social-btn" title="Pinterest">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.77 1.22-5.17 1.22-5.17s-.31-.63-.31-1.56c0-1.46.85-2.55 1.9-2.55.9 0 1.33.67 1.33 1.48 0 .9-.58 2.25-.87 3.5-.25 1.05.52 1.9 1.55 1.9 1.86 0 3.1-2.4 3.1-5.24 0-2.16-1.46-3.77-4.1-3.77-2.99 0-4.85 2.23-4.85 4.72 0 .86.25 1.46.64 1.93.18.22.2.3.14.55-.05.18-.16.62-.2.79-.07.25-.28.34-.51.25-1.42-.58-2.08-2.14-2.08-3.9 0-2.9 2.45-6.39 7.32-6.39 3.91 0 6.51 2.83 6.51 5.87 0 4.02-2.24 7.03-5.52 7.03-1.1 0-2.14-.59-2.5-1.27l-.68 2.62c-.25.94-.91 2.12-1.36 2.84.89.27 1.82.41 2.79.41 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+      </a>
+      <a href="mailto:dhbridal1@gmail.com" class="social-btn" title="Email">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+      </a>
+    </div>
+    <br>
+    <p class="footer-col-title">ניוזלטר</p>
+    <div style="display:flex; gap:0; margin-top:8px;">
+      <input type="email" placeholder="האימייל שלך" style="padding:10px 14px; font-family:Montserrat,sans-serif; font-size:11px; border:1px solid rgba(184,149,90,0.3); background:rgba(255,255,255,0.06); color:white; outline:none; flex:1; direction:rtl;">
+      <button onclick="subscribeNewsletter()" style="padding:10px 16px; background:var(--gold); border:none; color:white; font-size:10px; letter-spacing:2px; cursor:pointer;">←</button>
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span>© 2025 DANIELLA HAJAJ BRIDAL · ALL RIGHTS RESERVED</span>
+  <span>PRIVACY POLICY · TERMS OF SERVICE</span>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // CURSOR
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx - 4 + 'px';
+    cursor.style.top = my - 4 + 'px';
+  });
+  function animateRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx - 18 + 'px';
+    ring.style.top = ry - 18 + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  // NAV SCROLL
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // REVEAL ON SCROLL
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  // TOAST
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3500);
+  }
+
+  function submitForm() {
+    const inputs = document.querySelectorAll('.appointment-form input, .appointment-form select, .appointment-form textarea');
+    let ok = true;
+    inputs.forEach(i => { if (!i.value && i.type !== 'date') ok = fal
